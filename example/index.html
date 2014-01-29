@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="charset" content="utf-8" />
+        <title>Example of docm</title>
+        <!-- Include the "before" script -->
+        <script src="../dist/docm-before.min.js"></script>
+
+        <script>
+            // Specify the list of modules to load on this page.
+            // This is especially handy since this can be done in your
+            // server-side template.
+            window.docm.list = ['module1'];
+        </script>
+    </head>
+    <body>
+        <script>
+            (function() {
+                // You can add a new module like this:
+                window.docm.modules.module1 = func;
+
+                // Or you can set all the modules at once.
+                // Be careful, because this overwrites the previous modules
+                // you may have added before.
+                window.docm.modules = {
+                    module1: func
+                };
+
+                // This is "module1"
+                function func() {
+                    console.log('module1');
+                }
+            }());
+        </script>
+
+        <script>
+            (function() {
+                // Here is another module.
+
+                // It won't be executed since it isn't in the
+                // "window.docm.list" array.
+                window.docm.modules.module2 = function() {
+                    console.log('module2');
+                };
+            }());
+        </script>
+
+        <!-- Include the "after" script after all your modules are loaded. -->
+        <script src="../dist/docm-after.min.js"></script>
+    </body>
+</html>

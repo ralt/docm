@@ -1,0 +1,17 @@
+{
+  "name": "docm",
+  "version": "1.0.0",
+  "description": "Organizes your frontend JS code in modules.",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ralt/docm"
+  },
+  "author": "Florian Margaine <florian@margaine.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.13.0"
+  }
+}
